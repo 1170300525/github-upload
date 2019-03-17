@@ -259,13 +259,14 @@ public class TurtleSoup {
      * @param turtle the turtle context
      */
     public static void drawPersonalArt(Turtle turtle) {
-        turtle.color(PenColor.GRAY);
-        turtle.turn(225);
-        turtle.forward(200);
-        drawSquare(turtle, 40);
-        drawRegularPolygon(turtle, 50, 5);
         
-
+    	turtle.color(PenColor.RED);
+        for (int i = 0; i < 12; i++) {
+        	for (int j = 3; j < 21; j++)
+        		drawRegularPolygon(turtle, j, 40);
+        	turtle.turn(30);	
+        }
+        
     }
 
     /**
@@ -277,9 +278,8 @@ public class TurtleSoup {
      */
     public static void main(String args[]) {
         DrawableTurtle turtle = new DrawableTurtle();
-        Set<Point> points = new HashSet<Point>();
-        Set<Point> point = new HashSet<Point>();
-        
+        //drawSquare(turtle, 200);
+        //drawRegularPolygon(turtle, 8, 70);
         drawPersonalArt(turtle);
         //draw the window
         //System.out.print(calculateBearingToPoint(0, 0, 0, 0, 1));
